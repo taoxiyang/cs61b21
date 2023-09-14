@@ -7,7 +7,7 @@ import java.util.Set;
  * @author qiushui
  * @Date 2023/9/14
  */
-public class LLRBTreeMap<K extends Comparable, V> implements Map61B<K, V> {
+public class LLRBTreeMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     @Override
     public void clear() {

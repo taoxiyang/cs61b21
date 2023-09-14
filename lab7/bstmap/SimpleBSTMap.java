@@ -8,7 +8,7 @@ import java.util.Set;
  * @author qiushui
  * @Date 2023/9/14
  */
-public class SimpleBSTMap<K extends Comparable, V> implements Map61B<K, V> {
+public class SimpleBSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     private class Node{
         K key;
@@ -101,8 +101,9 @@ public class SimpleBSTMap<K extends Comparable, V> implements Map61B<K, V> {
 
     @Override
     public void put(K key, V value) {
-        assert key != null;
-        root = insert(key, value, root);
+        if(key != null){
+            root = insert(key, value, root);
+        }
     }
 
     private Node insert(K key, V value, Node root){
