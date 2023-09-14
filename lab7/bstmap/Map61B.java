@@ -39,4 +39,7 @@ public interface Map61B<K, V> extends Iterable<K> {
      * throw an UnsupportedOperationException.*/
     V remove(K key, V value);
 
+    default void printInOrder(){
+    }
+
 }
