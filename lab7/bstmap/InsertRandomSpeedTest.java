@@ -1,6 +1,7 @@
 package bstmap;
 
 import java.util.HashMap;
+import java.util.Random;
 import java.util.TreeMap;
 import java.io.IOException;
 import java.util.Scanner;
@@ -43,11 +44,15 @@ public class InsertRandomSpeedTest {
     /** Returns time needed to put N random strings of length L into the
       * Map61B 61bMap. */
     public static double insertRandom(Map61B<String, Integer> map61B, int N, int L) {
+        Random random = new Random();
         Stopwatch sw = new Stopwatch();
         String s = "cat";
         for (int i = 0; i < N; i++) {
             s = StringUtils.randomString(L);
             map61B.put(s, new Integer(i));
+            if(random.nextBoolean()){
+                map61B.remove(s);
+            }
         }
         return sw.elapsedTime();
     }
@@ -55,11 +60,15 @@ public class InsertRandomSpeedTest {
     /** Returns time needed to put N random strings of length L into the
       * TreeMap treeMap. */
     public static double insertRandom(TreeMap<String, Integer> treeMap, int N, int L) {
+        Random random = new Random();
         Stopwatch sw = new Stopwatch();
         String s = "cat";
         for (int i = 0; i < N; i++) {
             s = StringUtils.randomString(L);
             treeMap.put(s, new Integer(i));
+            if(random.nextBoolean()){
+                treeMap.remove(s);
+            }
         }
         return sw.elapsedTime();
     }
@@ -67,11 +76,15 @@ public class InsertRandomSpeedTest {
     /** Returns time needed to put N random strings of length L into the
      * HashMap treeMap. */
     public static double insertRandom(HashMap<String, Integer> treeMap, int N, int L) {
+        Random random = new Random();
         Stopwatch sw = new Stopwatch();
         String s = "cat";
         for (int i = 0; i < N; i++) {
             s = StringUtils.randomString(L);
             treeMap.put(s, new Integer(i));
+            if(random.nextBoolean()){
+                treeMap.remove(s);
+            }
         }
         return sw.elapsedTime();
     }

@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>{
 
-    private Map61B<K,V> map = new SimpleBSTMap<>();
+    private Map61B<K,V> map = new LLRBTreeMap<>();
 
     @Override
     public void clear() {

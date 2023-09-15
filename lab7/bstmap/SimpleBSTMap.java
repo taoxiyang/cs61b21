@@ -24,15 +24,11 @@ public class SimpleBSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
             this.value = value;
         }
 
-        public boolean isLeaf(){
-            return left == null && right == null;
-        }
-
     }
 
-    private class InnerIterator implements Iterator{
+    private class InnerIterator<K> implements Iterator<K>{
 
-        private Object[] items;
+        private final Object[] items;
 
         private int idx = 0;
 
@@ -203,7 +199,7 @@ public class SimpleBSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     @Override
     public Iterator<K> iterator() {
-        return new InnerIterator();
+        return new InnerIterator<>();
     }
 
     public void printInOrder(){
